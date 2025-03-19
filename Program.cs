@@ -13,7 +13,7 @@ namespace Hakan
 
 
         //int age;
-       
+
         static void Main(string[] args)
         {
             Human a = new Human();
@@ -22,21 +22,21 @@ namespace Hakan
             //Console.WriteLine(a.food());
 
             Console.WriteLine(a.Compar());
+            Console.WriteLine(a.Mogayese());
 
-        
-            
 
-}
+
+        }
 
         //public int userAge()
         //{
 
         //    Console.WriteLine("Enter your birth year");
         //    int birthYear = Convert.ToInt32(Console.ReadLine());
-        //    PersianCalendar pc = new PersianCalendar();
-        //    int year = pc.GetYear(DateTime.Now);
-        //    int data = year - birthYear;
-        //    int result = age += data;
+        //PersianCalendar pc = new PersianCalendar();
+        //int year = pc.GetYear(DateTime.Now);
+        //int data = year - birthYear;
+        //int result = age += data;
         //    return result;
 
         //}
@@ -55,7 +55,7 @@ namespace Hakan
 
             char[] arr1 = { 'a', 'f', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j' };
             char[] arr2 = { 'j', 'i', 'h', 'b', 'g', 'f', 'e', 'd', 'c', 'a' };
-           
+
             Array.Sort(arr1);
             Array.Sort(arr2);
             string result = "";
@@ -67,14 +67,31 @@ namespace Hakan
                     break;
                 }
                 else { result = "Yes"; }
-               
+
             }
-         return result;   
+            return result;
 
         }
+        public bool Mogayese()
+        {
 
+            char[] array1 = { 'a', 'f', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j' };
+            char[] array2 = { 'J', 'I', 'H', 'B', 'G', 'F', 'E', 'D', 'C', 'A' };
+            for (int z = 0; z < array1.Length; z++)
+            {
+                array1[z] = char.ToLower(array1[z]);
 
+            }
+            for (int v = 0; v < array2.Length; v++)
+            {
+                array2[v] = char.ToLower(array2[v]);
 
-    }
+            }
+            Array.Sort(array1);
+            Array.Sort(array2);
+            bool don = array1.SequenceEqual(array2);
+            return don;
+        }
+    } 
 }
 
